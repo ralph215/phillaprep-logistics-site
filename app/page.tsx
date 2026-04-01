@@ -446,4 +446,162 @@ export default function Home() {
       </footer>
     </main>
   );
-}
+}Update app/page.tsx to improve mobile spacing and responsiveness without changing the text content or form behavior.
+
+Make these exact class changes:
+
+1. Header container:
+Change
+mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 md:px-10 lg:px-16
+to
+mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-4 md:px-10 lg:px-16
+
+2. Header brand wrapper:
+Change
+flex items-center gap-4
+to
+flex min-w-0 items-center gap-3 sm:gap-4
+
+3. Header logo:
+Change
+h-12 w-auto rounded-xl bg-white p-1 ring-1 ring-neutral-200
+to
+h-10 w-auto rounded-lg bg-white p-1 ring-1 ring-neutral-200 sm:h-12 sm:rounded-xl
+
+4. Header brand text wrapper:
+Change the div immediately after the header logo image from
+<div>
+to
+<div className="min-w-0">
+
+5. Header brand title:
+Change
+text-sm font-bold tracking-[0.16em] text-neutral-900
+to
+truncate text-[11px] font-bold tracking-[0.14em] text-neutral-900 sm:text-sm sm:tracking-[0.16em]
+
+6. Header subtitle:
+Change
+mt-1 text-xs text-neutral-500
+to
+mt-1 hidden text-xs text-neutral-500 sm:block
+
+7. Header right wrapper:
+Change
+flex shrink-0 items-center gap-5
+to
+flex shrink-0 items-center gap-3 sm:gap-5
+
+8. Header CTA:
+Change
+rounded-2xl bg-black px-5 py-3 text-sm font-medium text-white transition hover:opacity-90
+to
+rounded-xl bg-black px-4 py-2.5 text-sm font-medium text-white transition hover:opacity-90 sm:rounded-2xl sm:px-5 sm:py-3
+
+9. Hero section:
+Change
+px-6 py-24 md:px-10 lg:px-16
+to
+px-4 py-16 sm:px-6 sm:py-20 md:px-10 md:py-24 lg:px-16
+
+10. Hero grid:
+Change
+relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.98fr_1.02fr] xl:gap-16
+to
+relative mx-auto grid max-w-7xl items-start gap-10 lg:grid-cols-[0.98fr_1.02fr] lg:items-center xl:gap-16
+
+11. Eyebrow pill:
+Change
+mb-6 inline-flex items-center gap-3 rounded-full border border-white/70 bg-white/85 px-4 py-2 ...
+to
+mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-white/70 bg-white/85 px-3 py-2 ... sm:mb-6 sm:gap-3 sm:px-4
+
+12. Eyebrow text:
+Change
+text-xs font-semibold uppercase tracking-[0.2em] text-neutral-600
+to
+truncate text-[10px] font-semibold uppercase tracking-[0.16em] text-neutral-600 sm:text-xs sm:tracking-[0.2em]
+
+13. Hero h1:
+Change
+text-5xl ... sm:text-6xl ...
+to
+text-4xl ... leading-[0.98] sm:text-5xl ...
+
+14. Hero paragraph:
+Change
+mt-6 max-w-lg text-lg leading-8 text-neutral-700 sm:text-xl
+to
+mt-5 max-w-lg text-base leading-8 text-neutral-700 sm:mt-6 sm:text-lg lg:text-xl
+
+15. CTA wrapper:
+Change
+mt-8 flex flex-col gap-4 sm:flex-row
+to
+mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4
+
+16. Value cards:
+Change
+rounded-[24px] ... p-5 ...
+to
+rounded-[22px] ... p-4 ... sm:rounded-[24px] sm:p-5
+
+17. Right workflow card:
+Change
+rounded-[28px] ... p-8 ...
+to
+rounded-[24px] ... p-5 ... sm:rounded-[28px] sm:p-6 lg:p-8
+
+18. Workflow heading:
+Change
+text-3xl
+to
+text-2xl sm:text-3xl
+
+19. Tag row:
+Reduce gap to gap-2 sm:gap-3 and make the tag pills slightly smaller on mobile.
+
+20. Workflow items wrapper:
+Change
+mt-6 space-y-4
+to
+mt-6 space-y-3 sm:space-y-4
+
+21. Workflow item cards:
+Change
+px-5 py-4
+to
+px-4 py-3.5 sm:px-5 sm:py-4
+
+22. For Services, How it works, Request a quote, and footer sections:
+Change px-6
+to
+px-4 sm:px-6
+while keeping md and lg spacing the same.
+
+23. In the quote form row that contains the services checklist and estimated monthly volume:
+Change the grid from md:grid-cols-2 to lg:grid-cols-[1.35fr_0.65fr]
+
+24. For the monthlyVolume input only:
+Add lg:self-start
+
+25. Footer grid:
+Change gap-6
+to
+gap-5 sm:gap-6
+
+26. First footer column:
+Wrap it in a premium card style matching the other footer cards.
+
+27. Footer logo:
+Change h-10
+to
+h-9 sm:h-10
+
+28. Footer brand title:
+Change
+text-sm tracking-[0.18em]
+to
+text-[11px] tracking-[0.14em] sm:text-sm sm:tracking-[0.18em]
+
+Do not change any text copy, field names, form action, or business content. Only adjust responsiveness and spacing.
