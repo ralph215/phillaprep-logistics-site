@@ -25,7 +25,13 @@ export default function Home() {
                 href="#quote"
                 className="mt-2.5 block w-full rounded-2xl bg-black px-4 py-3 text-center text-sm font-medium text-white shadow-[0_12px_24px_rgba(15,23,42,0.16)] transition hover:opacity-90"
               >
-                Request a Quote
+                Request Quote
+              </a>
+              <a
+                href="tel:609-360-6554"
+                className="mt-2 block w-full rounded-2xl border border-neutral-300 bg-white/80 px-4 py-3 text-center text-sm font-medium text-neutral-900 shadow-sm transition hover:bg-white"
+              >
+                ☎ Call 609-360-6554
               </a>
             </div>
           </div>
@@ -58,6 +64,13 @@ export default function Home() {
                   Quote
                 </a>
               </nav>
+
+              <a
+                href="tel:609-360-6554"
+                className="hidden text-sm font-medium text-neutral-600 hover:text-neutral-900 lg:block"
+              >
+                ☎ 609-360-6554
+              </a>
 
               <a
                 href="#quote"
@@ -326,6 +339,10 @@ export default function Home() {
           <p className="mt-4 text-neutral-600">
             Tell us about your products, prep requirements, and expected volume so we can review the request and follow up with the right next steps.
           </p>
+          
+          <p className="mt-4 rounded-lg bg-neutral-50 px-4 py-3 text-sm text-neutral-700 border border-neutral-200">
+            <span className="font-semibold">Prefer to call?</span> Reach us at <a href="tel:609-360-6554" className="font-semibold text-black hover:underline">609-360-6554</a>
+          </p>
 
           <form
             className="mt-8 grid gap-4"
@@ -335,17 +352,20 @@ export default function Home() {
             <div className="grid gap-4 md:grid-cols-2">
               <input
                 type="text"
-                placeholder="Name"
+                placeholder="Name *"
                 name="name"
+                required
                 className="rounded-xl border border-neutral-300 px-4 py-3 outline-none focus:border-black"
               />
               <input
                 type="email"
-                placeholder="Email"
+                placeholder="Email *"
                 name="email"
+                required
                 className="rounded-xl border border-neutral-300 px-4 py-3 outline-none focus:border-black"
               />
             </div>
+            <p className="text-xs text-neutral-500">* Required fields</p>
 
             <div className="grid gap-4 md:grid-cols-2">
               <input
